@@ -1,0 +1,42 @@
+<table class="table-auto border w-fit rounded">
+  <thead class="bg-blue-400 text-white">
+    <tr class="text-base">
+      <th class="border border-orange-200 text-center px-6">Id</th>
+      <th class="border border-orange-200 text-center px-6">Food Name</th>
+      <th class="border border-orange-200 text-center px-6">Price</th>
+      <th class="border border-orange-200 text-center px-6">Add Food</th>
+      <th class="border border-orange-200 text-center px-6">Remove Food</th>
+    </tr>
+  </thead>
+  <tbody class="text-white bg-red-400">
+    <tr
+      class="text-center border-b-2 hover:bg-slate-400"
+      *ngFor="let foodItem of foodItem; index as i"
+    >
+      <td class="border">
+        {{ i + 1 }}
+      </td>
+      <td class="border">
+        {{ foodItem.foodName }}
+      </td>
+      <td class="border">
+        {{ foodItem.price }}
+      </td>
+      <td class="border">
+        <button (click)="addFood(i, foodItem)">Add</button>
+      </td>
+      <td class="border">
+        <button (click)="removeFood(i, foodItem)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 class="m-2 text-center text-xl font-extrabold text-green-800 underline">Item Added In The List</h1>
+    <div class="display flex" *ngFor="let foodie of foodOrdered">
+        <p><span class="font-bold">{{ foodie.foodName }}</span> - {{ foodie.price }}</p>
+    </div>
+
+
+
+

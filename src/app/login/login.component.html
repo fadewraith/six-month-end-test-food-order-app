@@ -1,0 +1,50 @@
+<div
+  class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-emerald-300"
+>
+  <div class="border rounded p-4 bg-amber-600">
+    <h1 class="text-center text-4xl p-2">Login Form</h1>
+    <form [formGroup]="login" (ngSubmit)="signIn(login.value)">
+      <div class="p-2 rounded">
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+          formControlName="email"
+          class="rounded p-2 text font-semibold"
+        />
+      </div>
+      <span class="text-black-500" *ngIf="Email && Email.invalid && Email.dirty"
+        >Enter Valid Email</span
+      >
+      <div class="p-2 rounded">
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          formControlName="password"
+          class="rounded p-2 text font-semibold"
+        />
+      </div>
+      <span class="text-red-500" *ngIf="Password && Password.invalid && Password.touched"
+      >Enter Password</span
+    >
+      <div class="flex">
+        <div class="text-center m-2">
+          <button
+            class="text-2xl border rounded px-4 py-2 bg-green-800 text-white font-semibold"
+          >
+            Login
+          </button>
+        </div>
+        <div class="text-center m-2">
+          <button
+            class="text-2xl border rounded px-4 py-2 bg-red-600 text-white font-semibold"
+            routerLink="/sign-up"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

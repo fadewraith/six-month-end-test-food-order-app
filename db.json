@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "foodName": "pizza",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "foodName": "burger",
+      "price": 300
+    },
+    {
+      "id": 3,
+      "foodName": "dosa",
+      "price": 400
+    },
+    {
+      "id": 4,
+      "foodName": "idli",
+      "price": 500
+    },
+    {
+      "id": 5,
+      "foodName": "sambhar",
+      "price": 600
+    }
+    
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

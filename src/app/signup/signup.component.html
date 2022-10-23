@@ -1,0 +1,84 @@
+<div
+  class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-slate-200"
+>
+  <div class="border border-black bg-white rounded m-4 p-4">
+    <h1 class="text-center text-4xl m-2 p-4">Sign Up Form</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="addUser(signUpForm.value)">
+      <div class="m-2">
+        <label for="firstName" class="text-2xl">Enter First Name</label>
+        <div class="py-2 rounded">
+          <input type="text" name="firstName" formControlName="firstName" class=" border-black border rounded p-2 text font-semibold"/>
+        </div>
+        <span
+          class="text-red-500"
+          *ngIf="
+            FirstName &&
+            FirstName.invalid && FirstName.dirty && FirstName.touched
+          "
+          >Enter Valid Name</span
+        >
+      </div>
+
+      <!--  -->
+      <div class="m-2">
+        <label for="lastName" class="text-2xl">Enter Last Name</label>
+        <div class=" py-2 rounded">
+          <input type="text" name="lastName" formControlName="lastName"  class=" border-black border rounded p-2 text font-semibold"/>
+        </div>
+        <span
+        class="text-red-500"
+          *ngIf="
+            LastName &&
+            LastName.invalid && LastName.dirty && LastName.touched
+          "
+          >Enter Valid Name</span
+        >
+      </div>
+
+      <!--  -->
+      <div class="m-2">
+        <label for="email" class="text-2xl">Enter Email</label>
+        <div class=" py-2 rounded">
+          <input type="email" name="email" formControlName="email"  class=" border-black border rounded p-2 text font-semibold"/>
+        </div>
+        <span
+        class="text-red-500"
+          *ngIf="Email && Email.invalid && Email.dirty && Email.touched"
+          >Enter Valid Email</span
+        >
+      </div>
+
+      <!--  -->
+      <div class="m-2">
+        <label for="password" class="text-2xl">Enter Password</label>
+        <div class=" py-2 rounded">
+          <input type="password" name="password" formControlName="password"  class=" border-black border rounded p-2 text font-semibold"/>
+        </div>
+        <span
+        class="text-red-500"
+          *ngIf="
+            Password &&
+            Password.invalid && Password.dirty && Password.touched
+          "
+          >Enter Password</span
+        >
+      </div>
+
+      <div class="flex justify-center">
+        <div class="text-center m-2">
+          <button
+            [disabled]="!signUpForm.valid"
+            class="text-2xl border rounded px-4 py-2 bg-green-400 text-white"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="text-center m-2">
+          <button class="text-2xl border rounded px-4 py-2 bg-red-400 text-white" routerLink="/login">
+            Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
